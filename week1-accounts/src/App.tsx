@@ -8,32 +8,14 @@ const accounts: Account[] = [
     id: 1,
     name: "Everyday Account",
     type: "checking",
-    balance: 125000,
+    balance: -125000,
     nickname: "Everyday"
-  },
-  {
-    id: 2,
-    name: "Savings Account",
-    type: "savings",
-    balance: 50000
   },
   {
     id: 3,
     name: "Business Account",
     type: "checking",
     balance: 250000
-  },
-  {
-    id: 4,
-    name: "Investment Account",
-    type: "savings",
-    balance: 100000
-  },
-  {
-    id: 5,
-    name: "Retirement Account",
-    type: "savings",
-    balance: 200000
   }
 ];
 

@@ -13,7 +13,13 @@ export default function AccountCard({ type, name, balance, nickname }: AccountCa
         <Card>
             <h2>{name}</h2>
             <p>Type: {type}</p>
-            <p>Balance: ¥{balance.toLocaleString("ja-JP")}</p>
+
+            {balance < 0 ? (
+                <p style={{ color: 'red' }}>Balance: ¥{balance.toLocaleString("ja-JP")}</p>
+            ) : (
+                <p>Balance: ¥{balance.toLocaleString("ja-JP")}</p>
+            )}
+            
             {nickname && <p>Nickname: {nickname}</p>}
         </Card>
     );
