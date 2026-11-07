@@ -1,5 +1,5 @@
 import './App.css'
-import { AccountList } from './components/AccountList.tsx'
+import AccountList from './components/AccountList.tsx'
 import type { Account } from './types.ts'
 
 
@@ -8,14 +8,16 @@ const accounts: Account[] = [
     id: 1,
     name: "Everyday Account",
     type: "checking",
-    balance: -125000,
+    balance: -12500056,
+    currency: 'USD',
     nickname: "Everyday"
   },
   {
     id: 3,
     name: "Business Account",
     type: "checking",
-    balance: 250000
+    currency:'JPY',
+    balance: 25000056
   }
 ];
 

@@ -1,7 +1,7 @@
 import type { Account } from '../types.ts'
 import AccountCard from './AccountCard.tsx'
 
-export function AccountList({ accounts }: { accounts: Account[] }) {
+export default function AccountList({ accounts }: { accounts: Account[] }) {
   if (accounts.length === 0) {
     return <p>No accounts available.</p>;
   }
@@ -15,6 +15,7 @@ export function AccountList({ accounts }: { accounts: Account[] }) {
           type={account.type}
           balance={account.balance}
           nickname={account.nickname}
+          currency={account.currency}
         />
       ))}
     </div>

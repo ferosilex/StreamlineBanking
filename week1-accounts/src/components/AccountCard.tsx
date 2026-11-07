@@ -1,13 +1,16 @@
+import type { Currency } from "../types";
 import Card from "./Card";
+import Money from "./Money";
 
 type AccountCardProps = {
   type: "checking" | "savings";
   name: string;
   balance: number; // in yen
   nickname?: string;
+  currency: Currency;
 };
 
-export default function AccountCard({ type, name, balance, nickname }: AccountCardProps) {
+export default function AccountCard({ type, name, balance, nickname, currency }: AccountCardProps) {
 
     return (
         <Card>
@@ -15,9 +18,9 @@ export default function AccountCard({ type, name, balance, nickname }: AccountCa
             <p>Type: {type}</p>
 
             {balance < 0 ? (
-                <p style={{ color: 'red' }}>Balance: ¥{balance.toLocaleString("ja-JP")}</p>
+                <p style={{ color: 'red' }}>Balance: <Money amount={balance} currency={currency} /></p>
             ) : (
-                <p>Balance: ¥{balance.toLocaleString("ja-JP")}</p>
+                <p>Balance: <Money amount={balance} currency={currency} /></p>
             )}
             
             {nickname && <p>Nickname: {nickname}</p>}
